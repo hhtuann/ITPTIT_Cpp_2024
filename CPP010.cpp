@@ -13,35 +13,40 @@ hhtuann._
 ________ Hoang Hoang Tuan ________
 __ Take Off Toward Your Dream ! __
 ............................... */
-
-LL calc(int n)
+void solve()
 {
-    return n * (n - 1) / 2;
+    // your solution
+    int n;
+    cin >> n;
+    int x;
+    int check = 0;
+    int f[10004];
+    memset(f, 0, sizeof(f));
+    int maxx = -1;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> x;
+        if (f[x] == 1)
+            check = 1;
+        maxx = max(maxx, x);
+        f[x] = 1;
+    }
+    int cnt = 0;
+    for (int i = 1; i <= maxx; i++)
+    {
+        for (int j = 1; j <= maxx; j++)
+        {
+            
+        }
+    }
 }
 int main()
 {
     ONLY_CPP
     // input
-    int n;
-    cin >> n;
-    map<pair<int, int>, int> mp;
-    map<int, int> x;
-    map<int, int> y;
-    pair<int, int> p;
-    for (int i = 0; i < n; i++)
-    {
-        cin >> p.first >> p.second;
-        mp[p]++;
-        x[p.first]++;
-        y[p.second]++;
-    }
-    LL cnt = 0;
-    for (auto it : x)
-        cnt += calc(it.second);
-    for (auto it : y)
-        cnt += calc(it.second);
-    for (auto it : mp)
-        cnt -= calc(it.second);
-    cout << cnt;
+    int t;
+    cin >> t;
+    while (t--)
+        solve();
     return 0;
 }

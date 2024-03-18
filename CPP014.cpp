@@ -13,35 +13,33 @@ hhtuann._
 ________ Hoang Hoang Tuan ________
 __ Take Off Toward Your Dream ! __
 ............................... */
-
-LL calc(int n)
+void solve()
 {
-    return n * (n - 1) / 2;
+    // your solution
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    int Max = -inf;
+    int id = -1;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> v[i];
+        if (v[i] > Max)
+        {
+            Max = v[i];
+            id = i;
+        }
+    }
+    id++;
+    cout << id % n << endl;
 }
 int main()
 {
     ONLY_CPP
     // input
-    int n;
-    cin >> n;
-    map<pair<int, int>, int> mp;
-    map<int, int> x;
-    map<int, int> y;
-    pair<int, int> p;
-    for (int i = 0; i < n; i++)
-    {
-        cin >> p.first >> p.second;
-        mp[p]++;
-        x[p.first]++;
-        y[p.second]++;
-    }
-    LL cnt = 0;
-    for (auto it : x)
-        cnt += calc(it.second);
-    for (auto it : y)
-        cnt += calc(it.second);
-    for (auto it : mp)
-        cnt -= calc(it.second);
-    cout << cnt;
+    int t;
+    cin >> t;
+    while (t--)
+        solve();
     return 0;
 }
