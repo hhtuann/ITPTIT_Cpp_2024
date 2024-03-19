@@ -19,20 +19,16 @@ void solve()
     int n;
     cin >> n;
     vector<int> v(n);
-    int Max = -inf;
-    int id = 0;
-    for(auto x: v)
+    int res = 0;
+    for(auto &x: v)
         cin >> x;
     v.push_back(0);
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i < n; i++)
     {
         if (v[i] < v[i - 1])
-        {
-            id = i;
-            break;
-        }
+            res = i;
     }
-    cout << id % n << endl;
+    cout << res << endl;
 }
 int main()
 {
