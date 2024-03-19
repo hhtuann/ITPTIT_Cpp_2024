@@ -23,7 +23,7 @@ void solve()
     int id = 0;
     for(auto x: v)
         cin >> x;
-    v.push_back(0)
+    v.push_back(0);
     for (int i = 1; i <= n; i++)
     {
         if (v[i] < v[i - 1])
