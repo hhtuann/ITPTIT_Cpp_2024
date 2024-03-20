@@ -21,6 +21,7 @@ void solve()
     cin >> n;
     vector<int> v(n);
     int res = 0;
+<<<<<<< HEAD
     for (auto &x : v)
         cin >> x;
     for (int i = 1; i < n; i++)
@@ -30,6 +31,15 @@ void solve()
             res = i;
             // break;
         }
+=======
+    for(auto &x: v)
+        cin >> x;
+    v.push_back(0);
+    for (int i = 1; i < n; i++)
+    {
+        if (v[i] < v[i - 1])
+            res = i;
+>>>>>>> 70033b1852963bcd80e1feaa0ad17564cb9e56f8
     }
     cout << res << endl;
 }
