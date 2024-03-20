@@ -18,27 +18,38 @@ void solve()
     // your solution
     int n;
     cin >> n;
-    int x;
-    int check = 0;
-    int f[10004];
-    memset(f, 0, sizeof(f));
-    int maxx = -1;
-    for (int i = 0; i < n; i++)
+
+    vector<int> a(n);
+    for (auto &v : a)
+        cin >> v;
+
+    multiset<int> st;
+    for (auto &v : a)
+        st.insert(v);
+
+    while (true)
     {
-        cin >> x;
-        if (f[x] == 1)
-            check = 1;
-        maxx = max(maxx, x);
-        f[x] = 1;
-    }
-    int cnt = 0;
-    for (int i = 1; i <= maxx; i++)
-    {
-        for (int j = 1; j <= maxx; j++)
+        bool check = true;
+        for (auto &v : a)
         {
-            
+            if (!check)
+                break;
+            for (auto &u : a)
+            {
+                if (!check)
+                    break;
+                if (st.find(abs(v - u)) == st.end())
+                {
+                    check = false;
+                    st.insert(abs(v - u));
+                }
+            }
         }
+        if (check)
+            break;
     }
+
+    cout << (st.size() - n) % 2 << "\n";
 }
 int main()
 {

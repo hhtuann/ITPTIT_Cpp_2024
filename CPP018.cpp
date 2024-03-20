@@ -16,16 +16,6 @@ ________ Hoang Hoang Tuan ________
 __ Take Off Toward Your Dream ! __
 ............................... */
 
-void chuanhoa(string &s)
-{
-    for (int i = 0; i < s.size(); i++)
-    {
-        if (s[i] >= 'A' && s[i] <= 'Z')
-            s[i] += 32;
-    }
-    if (s[0] >= 'a' && s[0] <= 'z')
-        s[0] -= 32;
-}
 struct Vegetable
 {
     int id;
@@ -35,18 +25,7 @@ struct Vegetable
     void input(int i)
     {
         id = i;
-        string s;
-        while (cin >> s)
-        {
-            chuanhoa(s);
-            name += " " + s;
-            if (cin.peek() == '\n')
-            {
-                cin.ignore();
-                break;
-            }
-        }
-        name.erase(0, 1);
+        cin >> name;
         cin >> buy >> sell >> nutrition;
         profit = sell - buy;
     }
@@ -59,8 +38,8 @@ struct Vegetable
 bool cmp(Vegetable a, Vegetable b)
 {
     if (a.nutrition == b.nutrition)
-        return a.profit > b.profit;
-    return a.nutrition >= b.nutrition;
+        return a.profit < b.profit;
+    return a.nutrition > b.nutrition;
 }
 int main()
 {

@@ -31,26 +31,17 @@ struct SinhVien
     string name = "";
     int dob;
     double point;
+    string s;
     void input()
     {
-        string s;
-        while (cin >> s)
-        {
-            chuanhoa(s);
-            name += " " + s;
-            if (cin.peek() == '\n')
-            {
-                cin.ignore();
-                break;
-            }
-        }
-        name.erase(0, 1);
+        cin.ignore();
+        getline(cin, name);
         cin >> dob >> point;
     }
     void output(int i)
     {
         cout << "#" << i << sp << name << sp << dob << sp;
-        cout << fixed << setprecision(1) << point << endl;
+        cout << point << endl;
     }
 };
 
@@ -60,17 +51,18 @@ int main()
     // input
     int n;
     cin >> n;
-    cin.ignore();
+
     vector<SinhVien> v(n);
-    int i = 0;
-    double Min = 11;
-    double Max = -1;
+
+    double Min = inf;
+    double Max = -inf;
     for (auto &x : v)
     {
         x.input();
         Max = max(Max, x.point);
         Min = min(Min, x.point);
     }
+
     int id = 0;
     for (auto x : v)
     {
@@ -78,6 +70,7 @@ int main()
             x.output(++id);
     }
     cout << endl;
+
     id = 0;
     for (auto x : v)
     {
