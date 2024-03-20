@@ -31,7 +31,6 @@ struct SinhVien
     string name = "";
     int dob;
     double point;
-    string s;
     void input()
     {
         cin.ignore();
