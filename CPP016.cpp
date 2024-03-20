@@ -16,16 +16,6 @@ ________ Hoang Hoang Tuan ________
 __ Take Off Toward Your Dream ! __
 ............................... */
 
-void chuanhoa(string &s)
-{
-    for (int i = 0; i < s.size(); i++)
-    {
-        if (s[i] >= 'A' && s[i] <= 'Z')
-            s[i] += 32;
-    }
-    if (s[0] >= 'a' && s[0] <= 'z')
-        s[0] -= 32;
-}
 struct SinhVien
 {
     string name = "";
