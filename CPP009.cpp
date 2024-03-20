@@ -64,6 +64,7 @@ void solve()
         }
     }
 }
+
 int main()
 {
     ONLY_CPP

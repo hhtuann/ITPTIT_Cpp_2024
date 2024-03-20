@@ -53,7 +53,6 @@ int main()
     cin >> n;
 
     vector<SinhVien> v(n);
-
     double Min = inf;
     double Max = -inf;
     for (auto &x : v)

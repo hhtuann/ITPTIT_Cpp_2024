@@ -48,6 +48,7 @@ void solve()
     }
     cout << st.size() << endl;
 }
+
 int main()
 {
     ONLY_CPP

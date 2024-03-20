@@ -37,7 +37,6 @@ int main()
 {
     ONLY_CPP
     // input
-
     cin >> n >> k;
     cin >> s;
     s = " " + s;

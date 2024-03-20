@@ -15,7 +15,6 @@ hhtuann._
 ________ Hoang Hoang Tuan ________
 __ Take Off Toward Your Dream ! __
 ............................... */
-
 struct Vegetable
 {
     int id;

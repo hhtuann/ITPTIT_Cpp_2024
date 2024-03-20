@@ -42,6 +42,7 @@ void solve()
     }
     cout << endl;
 }
+
 int main()
 {
     ONLY_CPP

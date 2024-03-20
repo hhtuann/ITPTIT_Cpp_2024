@@ -13,7 +13,6 @@ hhtuann._
 ________ Hoang Hoang Tuan ________
 __ Take Off Toward Your Dream ! __
 ............................... */
-
 struct PhanSo
 {
     int t, m;
