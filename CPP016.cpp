@@ -23,8 +23,14 @@ struct SinhVien
     double point;
     void input()
     {
-        cin.ignore();
-        getline(cin, name);
+        string s;
+        while (cin >> s)
+        {
+            name += " " + s;
+            if (cin.peek() == '\n')
+                break;
+        }
+        name.erase(0, 1);
         cin >> dob >> point;
     }
     void output(int i)

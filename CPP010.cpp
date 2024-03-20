@@ -19,38 +19,10 @@ void solve()
     // your solution
     int n;
     cin >> n;
-
-    vector<int> a(n);
-    for (auto &v : a)
-        cin >> v;
-
-    multiset<int> st;
-    for (auto &v : a)
-        st.insert(v);
-
-    while (true)
-    {
-        bool check = true;
-        for (auto &v : a)
-        {
-            if (!check)
-                break;
-            for (auto &u : a)
-            {
-                if (!check)
-                    break;
-                if (st.find(abs(v - u)) == st.end())
-                {
-                    check = false;
-                    st.insert(abs(v - u));
-                }
-            }
-        }
-        if (check)
-            break;
-    }
-
-    cout << (st.size() - n) % 2 << "\n";
+    set<int> st;
+    for (int i = 0, x; i < n && cin >> x; i++, st.insert(x))
+        ;
+    cout << (*st.rbegin() - n) % 2 << endl;
 }
 int main()
 {
